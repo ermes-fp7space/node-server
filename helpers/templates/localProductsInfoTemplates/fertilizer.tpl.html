@@ -1,0 +1,10 @@
+<ul id="fertilizer" class="display-none">
+    <li><b>Date:</b> <%= new Date(observationDate).toDateString() %></li>
+    <li><b>Product:</b> <%= name %></li>
+    <li><b>Quantity:</b> <%= quantity %></li>
+    <li><b>Nitrogen Content:</b> <%= nitrogenContent %></li>
+    <li><b>Phosphorus Content:</b> <%= phosphorusContent %></li>
+    <li><b>Potassium Content:</b> <%= potassiumContent %></li>
+    <li><b>Uploading Date:</b> <%= new Date(uploadDate).toDateString() %></li>
+    <li class="display-none" id="fertilizerID"><%= productId %></li>
+</ul>

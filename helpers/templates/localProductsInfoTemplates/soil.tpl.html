@@ -1,0 +1,8 @@
+<ul id="soil" class="display-none">
+    <li><b>Date:</b> <%= new Date(observationDate).toDateString() %></li>
+    <li><b>Soil Texture:</b> <%= soilTexture %></li>
+    <li><b>Organic Matter:</b> <%= organicMatter %></li>
+    <li><b>PH:</b> <%= ph %></li>
+    <li><b>Uploading Date: </b><%= new Date(uploadDate).toDateString() %></li>
+    <li class="display-none" id="soilID"><%= productId %></li>
+</ul>

@@ -1,0 +1,137 @@
+<form id="form-template" date-product="phenology" date-url = "/cropPhenologies" enctype='application/json'>
+        <div class="form-group">
+            <label>Observation Date</label>
+            <input class="form-control" type="date" name="observationDate" value="<%= formatDate(observationDate) %>">
+        </div>
+
+        <div class="form-group">
+            <label>Development Stage</label>
+            <select name="developmentStage" class="form-control" >
+                <% var developmentStages = {
+                    'emergence': "Emergence",
+                    '2nd-leaf': "2nd leaf",
+                    '3rd-leaf': "3rd leaf",
+                    '4th-leaf': "4th leaf",
+                    'beginning-of-tillering': "Beginning of tillering",
+                    'panicle-initiation': "Panicle initiation",
+                    'heading': "Heading",
+                    'flowering': "Flowering",
+                    'maturity': "Maturity"
+                }
+                for(var value in developmentStages){
+                if (value === developmentStage) {%>
+                    <option selected value= "<%=value%>" ><%=developmentStages[value]%></option>
+                <%} else { %>
+                    <option value= "<%=value%>" ><%=developmentStages[value]%></option>
+                <%}
+                } %>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label>Growth Stage</label>
+            <select name="growthStage" class="form-control" >
+                <% var growthStages = {
+                    'null': "Growth stage",
+                    '0': "0: germination",
+                    '1': "1: leaf development",
+                    '2': "2: tillering",
+                    '3': "3: stem elongation",
+                    '4': "4: booting",
+                    '5': "5: inflorescence emergence, heading",
+                    '6': "6: flowering, anthesis",
+                    '7': "7: development of fruit",
+                    '8': "8: ripening",
+                    '9': "9: senescence"
+                }
+                for(var value in growthStages){
+                if (value === growthStage) {%>
+                    <option selected value= "<%=value%>" ><%=growthStages[value]%></option>
+                <%} else { %>
+                    <option value= "<%=value%>" ><%=growthStages[value]%></option>
+                <%}
+                } %>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label>Code</label>
+            <select name="code" class="form-control" >
+                <% var codes = {
+                    'null': "Code",
+                    '0': "0: dry seed (caryopsis)",
+                    '1': "1: beginning of seed imbibition",
+                    '3': "3: seed imbibition complete (pigeon breast)",
+                    '5': "5: radicle emerged from caryopsis",
+                    '6': "6: radicle elongated, root hairs and/or side roots visible",
+                    '7': "7: coleoptile emerged from caryopsis (in water-rice this stage occurs before stage 05)",
+                    '9': "9: imperfect leaf emerges (still rolled) at the tip of the coleoptile",
+                    '10': "10: imperfect leaf unrolled, tip of first true leaf visible",
+                    '11': "11: first leaf unfolded",
+                    '12': "12: 2 leaves unfolded",
+                    '13': "13: 3 leaves unfolded",
+                    '14': "14: 4 leaves unfolded",
+                    '15': "15: 5 leaves unfolded",
+                    '16': "16: 6 leaves unfolded",
+                    '17': "17: 7 leaves unfolded",
+                    '18': "18: 8 leaves unfolded ",
+                    '19': "19: 9 or more leaves unfolded",
+                    '21': "21: beginning of tillering: first tiller detectable",
+                    '22': "22: 2 tillers detectable",
+                    '23': "23: 3 tillers detectable",
+                    '24': "24: 4 tillers detectable",
+                    '25': "25: 5 tillers detectable",
+                    '26': "26: 6 tillers detectable",
+                    '27': "27: 7 tillers detectable",
+                    '28': "28: 8 tillers detectable",
+                    '29': "29: maximum number of tillers detectable",
+                    '30': "30: panicle initiation or green ring stage: chlorophyll accumulates in the stem tissue, forming a green ring",
+                    '32': "32: panicle formation: panicle 1–2 mm in length (variety-dependent)",
+                    '34': "34: internode elongation or jointing stage: internodes begin to elongate, panicle more than 2 mm long",
+                    '37': "37: flag leaf just visible, still rolled, panicle moving upwards",
+                    '39': "39: flag leaf stage: flag leaf unfolded, collar regions (auricle and ligule) of flag leaf and penultimate leaf aligned (pre-boot stage)",
+                    '41': "41: early boot stage: upper part of stem slightly thickened, sheath of flag leaf about 5 cm out of penultimate",
+                    '43': "43: mid boot stage: sheath of flag leaf 5–10 cm out of the penultimate leaf sheath",
+                    '45': "45: late boot stage: flag leaf sheath swollen, sheath of flag leaf more than 10 cm out of penultimate leaf sheath",
+                    '47': "47: flag leaf sheath opening",
+                    '49': "49: flag leaf sheath open",
+                    '51': "51: beginning of panicle emergence: tip of inflorescence emerged from sheath",
+                    '52': "52: 20% of panicle emerged",
+                    '53': "53: 30% of panicle emerged",
+                    '54': "54: 40% of panicle emerged",
+                    '55': "55: middle of panicle emergence: neck node still in sheath",
+                    '56': "56: 60% of panicle emerged",
+                    '57': "57: 70% of panicle emerged",
+                    '58': "58: 80% of panicle emerged",
+                    '59': "59: end of panicle emergence: neck node level with the flag leaf auricle, anthers not yet visible",
+                    '61': "61: beginning of flowering: anthers visible at top of panicle",
+                    '65': "65: full flowering: anthers visible on most spikelets",
+                    '69': "69: end of flowering: all spikelets have completed flowering but some dehydrated anthers may remain",
+                    '71': "71: watery ripe: first grains have reached half their final size",
+                    '73': "73: early milk",
+                    '75': "75: medium milk: grain content milky",
+                    '77': "77: late milk",
+                    '83': "83: early dough",
+                    '85': "85: soft dough: grain content soft but dry, fingernail impression not held, grains and glumes still green",
+                    '87': "87: hard dough: grain content solid, fingernail impression held",
+                    '89': "89: fully ripe: grain hard, difficult to divide with thumbnail",
+                    '92': "92: over-ripe: grain very hard, cannot be dented by thumbnail",
+                    '97': "97: plant dead and collapsing ",
+                    '99': "99: harvested product"
+                }
+                for(var value in codes){
+                    if (value === code) {%>
+                        <option selected value= "<%=value%>" ><%=codes[value]%></option>
+                    <%} else { %>
+                        <option value= "<%=value%>" ><%=codes[value]%></option>
+                    <%}
+                } %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label id="form-put-response-label"></label>
+        </div>
+</form>

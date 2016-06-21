@@ -1,0 +1,56 @@
+[
+  {
+    "regionId": "IT",
+    "operationalLayers":[
+      {
+        "configId": "102",
+        "id": "Aggregated RiceAreaha",
+        "name": "Aggregated RiceAreaha",
+        "url": "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2016-IT/IT_Rice_Stats/MapServer/0",
+        "description": "Aggregated RiceAreaha",
+        "default": true
+      },
+      {
+        "configId": "103",
+        "id": "Aggregated RiceFc",
+        "name": "Aggregated RiceFc ",
+        "url": "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2016-IT/IT_Rice_Stats/MapServer/1",
+        "description": "Aggregated RiceFc",
+        "default": true
+      }
+    ]
+  },
+  {
+    "regionId": "SP",
+    "operationalLayers":[
+	  {
+        "configId": "201",
+        "id": "Modelo Local",
+        "names":{
+			"sp": "Modelo Local",
+			"en": "Local Model",
+			"it": "Modello Locale",
+			"gk": "τοπικό μοντέλο"
+		},
+        "url": "http://ermes.dlsi.uji.es:6080/arcgis/rest/services/2015-ES/LOCAL_MODEL/MapServer/0",
+        "description": "Resultados del modelo a nivel de parcela.",
+        "default": false
+      }
+    ]
+  },
+  {
+    "regionId": "GK",
+    "operationalLayers":[
+    ]
+  },
+  {
+	  "regionId": "GA",
+	  "operationalLayers":[
+		]
+  },
+  {
+	  "regionId": "SE",
+	  "operationalLayers":[
+		]
+  }
+]

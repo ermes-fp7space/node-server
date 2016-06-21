@@ -1,0 +1,13 @@
+<ul id="weed" class="display-none">
+    <li><b>Date:</b> <%= new Date(observationDate).toDateString() %></li>
+    <li><b>Name:</b> <%= name %></li>
+    <li><b>Comments:</b> <%= comments %></li>
+    <li><b>Percent Covered:</b> <%= percentCovered %></li>
+    <li><b>Uploading Date: </b><%= new Date(uploadDate).toDateString() %></li>
+    <% if (file) {%>
+        <li><a href="<%= file %>"><img src="<%= file %>" width="200"></a></li>
+    <%} else { %>
+        <li><b>No file uploaded.</b></li>
+    <%}%>
+    <li class="display-none" id="weedID"><%= productId %></li>
+</ul>

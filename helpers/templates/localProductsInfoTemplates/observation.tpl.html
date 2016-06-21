@@ -1,0 +1,10 @@
+<ul id="observation" class="display-none">
+    <li><b>Comments:</b> <%= comments %></li>
+    <li><b>Uploading Date:</b> <%= new Date(uploadDate).toDateString() %></li>
+    <% if (file) {%>
+    <li><a href="<%= file %>"><img src="<%= file %>" width="200"></a></li>
+    <%} else { %>
+    <li><b>No file uploaded.</b></li>
+    <%}%>
+    <li class="display-none" id="observationID"><%= productId %></li>
+</ul>

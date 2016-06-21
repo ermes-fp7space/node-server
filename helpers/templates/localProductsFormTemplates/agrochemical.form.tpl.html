@@ -1,0 +1,48 @@
+<form id="form-template" date-product="agrochemical" date-url = "/agrochemicals" enctype='application/json'>
+        <div class="form-group">
+            <label>Date of Usage</label>
+            <input class="form-control" type="date" name="observationDate" value="<%= formatDate(observationDate) %>">
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <select name="name" class="form-control" >
+                <% var names = {
+                    'azimsulfuron': "Azimsulfuron",
+                    'cyhalofop-butyl': "Cyhalofop Butyl",
+                    'imazamox-(clear-field)': "Imazamox (Clear field)",
+                    'penoxulam': "Penoxulam",
+                    'profixydim': "Profixydim",
+                    'quinclorac': "Quinclorac",
+                    'bentazon': "Bentazon",
+                    'fludioxonil': "Fludioxonil",
+                    'oxodiazon': "Oxodiazon",
+                    'propanil': "Propanil",
+                    'mcpa': "MCPA",
+                    'glyphosate-(only-for-paddy-mounds)': "Glyphosate (Only for paddy mounds)",
+                    'azoxistrobin': "Azoxistrobin",
+                    'propiconazole-prochloraz': "Propiconazole + Prochloraz",
+                    'trebuconazole': "Trebuconazole",
+                    'tricyclazone': "Tricyclazone",
+                    'pyrethroids': "Pyrethroids"
+                }
+                for(var value in names){
+                    if (value === name) {%>
+                        <option selected value= "<%=value%>" ><%=names[value]%></option>
+                    <%} else { %>
+                        <option value= "<%=value%>" ><%=names[value]%></option>
+                    <%}
+                } %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Amount</label>
+            <input placeholder="Kg/hectare" required="" min="0" name="amount" step="0.01" type="number" value="<%= amount %>" class="form-control" >
+        </div>
+
+
+        <div class="form-group">
+            <label id="form-put-response-label"></label>
+        </div>
+</form>

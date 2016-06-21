@@ -1,0 +1,48 @@
+<form id="form-template" date-product="soilType" date-url = "/soilTypes" enctype='application/json'>
+    <div class="form-group">
+        <label>Soil Texture</label>
+        <select name="soilTexture" class="form-control" >
+            <% var soilTextures = {
+                'clay': "Clay",
+                'sandy-clay': "Sandy clay",
+                'silty-clay': "Silty clay",
+                'sandy-clay-loam': "Sandy clay loam",
+                'clay-loam': "Clay loam",
+                'silty-clay-loam': "Silty clay loam",
+                'sandy-loam': "Sandy loam",
+                'loam': "Loam",
+                'silt-loam': "Silt loam",
+                'silt': "Silt",
+                'loamy-sand': "Loamy sand",
+                'sand': "Sand"
+            }
+            for(var value in soilTextures){
+                if (value === soilTexture) {%>
+                    <option selected value= "<%=value%>" ><%=soilTextures[value]%></option>
+                <%} else { %>
+                    <option value= "<%=value%>" ><%=soilTextures[value]%></option>
+                <%}
+            } %>
+        </select>
+
+    </div>
+
+    <div class="form-group">
+        <label>Organic Matter</label>
+        <input class="form-control" step="0.01" min="0" max="100" type="number" name="organicMatter" value="<%= organicMatter %>">
+    </div>
+
+    <div class="form-group">
+        <label>PH</label>
+        <input class="form-control" step="0.1" min="0" max="14" type="number" name="ph" value="<%= ph %>">
+    </div>
+
+    <div class="form-group">
+        <label>Date of Observation: </label>
+        <input class="form-control" type="date" name="observationDate" value="<%= formatDate(observationDate) %>">
+    </div>
+
+    <div class="form-group">
+        <label id="form-put-response-label"></label>
+    </div>
+</form>

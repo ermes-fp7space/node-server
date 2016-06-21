@@ -1,0 +1,128 @@
+[
+  {
+    "profileId": "IT-REGIONAL",
+    "configId": "IT-REGIONAL",
+    "region": "IT",
+    "products": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 121, 122, 123, 124, 125, 126, 127, 128, 129, 132],
+    "operationalLayers": [103],
+    "parcelsLayer": 101,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "IT-LOCAL",
+    "configId": "IT-LOCAL",
+    "region": "IT",
+    "products": [116, 117, 118, 130, 131, 133, 134, 135, 136, 137],
+    "operationalLayers": [],
+    "parcelsLayer": 101,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "SP-REGIONAL",
+    "configId": "SP-REGIONAL",
+    "region": "SP",
+    "products": [201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 221, 222, 223, 224, 225, 226, 227, 228, 229],
+    "operationalLayers": [],
+    "parcelsLayer": 201,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "SP-LOCAL",
+    "configId": "SP-LOCAL",
+    "region": "SP",
+    "products": [216, 217, 232, 233, 234, 235, 238, 239, 240, 241, 242, 243, 244],
+    "operationalLayers": [201],
+    "parcelsLayer": 201,
+    "parcelFinder": true
+  },
+  {
+    "profileId": "GK-REGIONAL",
+    "configId": "GK-REGIONAL",
+    "region": "GK",
+    "products": [301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 321, 322, 323, 324, 325, 326, 327, 328, 329, 304, 332],
+    "operationalLayers": [],
+    "parcelsLayer": 301,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "GK-LOCAL",
+    "configId": "GK-LOCAL",
+    "region": "GK",
+    "products": [316, 317, 330, 331, 333, 334, 335, 336, 337],
+    "operationalLayers": [],
+    "parcelsLayer": 301,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "IT-REGIONAL-GUEST",
+    "configId": "IT-REGIONAL",
+    "region": "IT",
+    "products": [121, 122, 123, 124, 125, 126, 127, 128, 129],
+    "operationalLayers": [],
+    "parcelsLayer": null,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "IT-LOCAL-GUEST",
+    "configId": "IT-LOCAL",
+    "region": "IT",
+    "products": [116],
+    "operationalLayers": [],
+    "parcelsLayer": null,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "SP-REGIONAL-GUEST",
+    "configId": "SP-REGIONAL",
+    "region": "SP",
+    "products": [221, 222, 223, 224, 225, 226, 227, 228, 229],
+    "operationalLayers": [],
+    "parcelsLayer": null,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "SP-LOCAL-GUEST",
+    "configId": "SP-LOCAL",
+    "region": "SP",
+    "products": [216],
+    "operationalLayers": [],
+    "parcelsLayer": null,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "GK-REGIONAL-GUEST",
+    "configId": "GK-REGIONAL",
+    "region": "GK",
+    "products": [321, 322, 323, 324, 325, 326, 327, 328, 329],
+    "operationalLayers": [],
+    "parcelsLayer": null,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "GK-LOCAL-GUEST",
+    "configId": "GK-LOCAL",
+    "region": "GK",
+    "products": [316],
+    "operationalLayers": [],
+    "parcelsLayer": null,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "GAMBIA",
+    "configId": "GAMBIA",
+    "region": "GA",
+    "products": [401],
+    "operationalLayers": [],
+    "parcelsLayer": null,
+    "parcelFinder": false
+  },
+  {
+    "profileId": "SENEGAL",
+    "configId": "SENEGAL",
+    "region": "SE",
+    "products": [501],
+    "operationalLayers": [],
+    "parcelsLayer": null,
+    "parcelFinder": false
+  }
+]

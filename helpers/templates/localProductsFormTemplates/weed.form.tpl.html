@@ -1,0 +1,53 @@
+<form id="form-template" date-product="weed" date-url = "/weeds" enctype='application/json'>
+
+
+        <div class="form-group">
+            <label>Observation Date</label>
+            <input class="form-control" type="date" name="observationDate" value="<%= formatDate(observationDate) %>">
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <select name="name" class="form-control" >
+                <% var names = {
+                    'bidens-sp': "Bidens sp",
+                    'cyperus-difformis': "Cyperus difformis",
+                    'heteranthera-sp': "Heteranthera sp",
+                    'echinochloa-crus-galli-or-oryzoides': "Echinochloa crus-galli or oryzoides",
+                    'leersia-oryzoides': "Leersia oryzoides",
+                    'red-rice-(oryza-sativa)': "Red rice (Oryza sativa)",
+                    'scirpus-sp': "Scirpus sp",
+                    'paspalum-distichum': "Paspalum distichum",
+                    'ammania-spp': "Ammania spp",
+                    'typha-spp': "Typha spp",
+                    'phragmites-communis': "Phragmites communis",
+                    'butomus-umbellatus': "Butomus umbellatus",
+                    'polygonum-spp': "Polygonum spp"
+                }
+                for(var value in names){
+                    if (value === name) {%>
+                        <option selected value= "<%=value%>" ><%=names[value]%></option>
+                    <%} else { %>
+                        <option value= "<%=value%>" ><%=names[value]%></option>
+                    <%}
+                } %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Comments</label>
+            <textarea required="" name="comments"  type="text" ><%= comments %></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label>Percent Covered</label>
+            <input required="" min="0" name="percentCovered" step="1" type="number" max="100" value="<%= percentCovered %>" class="form-control" >
+        </div>
+
+
+
+        <div class="form-group">
+            <label id="form-put-response-label"></label>
+        </div>
+</form>

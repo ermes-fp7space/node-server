@@ -1,0 +1,30 @@
+<form id="form-template" date-product="soilCondition" date-url = "/soilConditions" enctype='application/json'>
+    <div class="form-group">
+        <label>Parcel Status</label>
+        <select name="parcelStatus" class="form-control" >
+            <% var parcelStatuses = {
+                'bare-soil': "Bare soil",
+                'plowed': "Plowed",
+                'sowed': "Sowed",
+                'flooded': "Flooded"
+            }
+            for(var value in parcelStatuses){
+                if (value === parcelStatus) {%>
+                    <option selected value= "<%=value%>" ><%=parcelStatuses[value]%></option>
+                <%} else { %>
+                    <option value= "<%=value%>" ><%=parcelStatuses[value]%></option>
+                <%}
+            } %>
+        </select>
+
+    </div>
+
+    <div class="form-group">
+        <label>Date of Observation: </label>
+        <input class="form-control" type="date" name="observationDate" value="<%= formatDate(observationDate) %>">
+    </div>
+
+    <div class="form-group">
+        <label id="form-put-response-label"></label>
+    </div>
+</form>
